@@ -18,6 +18,8 @@ public class Automovil {
    private double cilindrada;
    private int capacidadTanque = 40;
 
+   private TipoAutomovil tipo;
+
     // Atributo de la clase
    private static Color colorPatente = Color.NARANJA;
    private static int capacidadTanqueStatico = 30;
@@ -108,6 +110,15 @@ public class Automovil {
     public static void setCapacidadTanqueStatico(int capacidadTanqueStatico) {
         Automovil.capacidadTanqueStatico = capacidadTanqueStatico;
     }
+
+    public TipoAutomovil getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoAutomovil tipo) {
+        this.tipo = tipo;
+    }
+
     // Metodos
 
     public String verDetalle(){
@@ -115,6 +126,7 @@ public class Automovil {
                 "\nauto.fabricante = " + this.fabricante +
                 "\nauto.modelo = " + this.modelo +
                 "\nauto.color = " + this.color +
+                "\nauto.tipo = " + this.getTipo().getDescripcion() +
                 "\nauto.colorPatente = " + colorPatente +
                 "\nauto.cilindrada = " + this.cilindrada;
     }
