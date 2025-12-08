@@ -3,18 +3,22 @@ public class EjemploAutomovil {
 
         Automovil subaru = new Automovil("Subaru", "Impreza");
         subaru.setCilindrada(2.0);
-        subaru.setColor("Blanco");
+        subaru.setColor(Color.BLANCO);
         System.out.println("subaru.getFabricante() + subaru.getModelo() = " + subaru.getFabricante() + " " +  subaru.getModelo());
 
-        Automovil mazda = new Automovil("Mazda", "BT-50", "red", 4.0);
+        Automovil mazda = new Automovil("Mazda", "BT-50", Color.ROJO, 4.0);
         System.out.println("mazda.getFabricante() = " + mazda.getFabricante());
 
-        Automovil nissan = new Automovil("Nissan", "Navara", "Gris oscuro", 3.5, 50);
-        Automovil nissan2 = new Automovil("Nissan", "Navara", "Gris oscuro", 3.5, 50);
+        Automovil nissan = new Automovil("Nissan", "Navara", Color.GRIS, 3.5, 50);
+        Automovil nissan2 = new Automovil("Nissan", "Navara", Color.GRIS, 3.5, 50);
+        Automovil auto = new Automovil();
 
         //System.out.println("Son iguales? " + (nissan == nissan2);
         System.out.println("Son iguales con equals? " + (nissan.equals(nissan2)));
+        System.out.println("Son iguales con equals? " + (auto.equals(nissan2)));
 
+
+        System.out.println(nissan.toString());
         System.out.println(subaru.verDetalle());
         System.out.println(mazda.verDetalle());
         System.out.println(nissan.verDetalle());
