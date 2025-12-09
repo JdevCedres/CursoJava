@@ -156,7 +156,7 @@ public class Automovil {
         return km/(Automovil.capacidadTanqueStatico * porcentajeGasolina);
     }
 
-    // Sobrescritura de metodos de la clase padre
+    // Sobrescritura de métodos de la clase padre
 
     @Override
     public boolean equals(Object obj) {
