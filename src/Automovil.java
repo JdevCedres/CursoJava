@@ -7,7 +7,7 @@ mencionados
  */
 
 
-import javax.swing.plaf.synth.SynthRadioButtonMenuItemUI;
+
 
 public class Automovil {
     // Atributos
@@ -170,6 +170,17 @@ public class Automovil {
                 "\nauto.colorPatente = " + colorPatente;
         if (this.motor != null) {
             detalle += this.motor.getCilindrada();
+        }
+        if (conductor != null){
+            detalle += "\nauto.Conductor subaru: " + this.getConductor();
+        }
+
+
+        if(getRuedas() != null){
+            detalle += "\nRuedas del automóvil: ";
+            for(Rueda r : this.getRuedas()){
+                detalle += "\n" + r.getFabricante() + ", " + r.getAro() + ", " + r.getAncho() ;
+            }
         }
 
         return detalle;

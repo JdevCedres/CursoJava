@@ -61,7 +61,7 @@ public class EjemploAutomovilRelacionesObjetos {
         System.out.println(mazda.verDetalle());
         System.out.println(nissan.verDetalle());
         System.out.println(nissan2.verDetalle());
-
+        /*
         for(Rueda r : subaru.getRuedas()) {
             if(r.getFabricante() != null){
                 System.out.println(r.getFabricante() + " " + r.getAro() + " " + r.getAncho() );
@@ -69,6 +69,9 @@ public class EjemploAutomovilRelacionesObjetos {
 
 
         }
+
+         */
+
 
 
     }
