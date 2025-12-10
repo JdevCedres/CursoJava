@@ -8,4 +8,8 @@ public class Tanque {
     public Tanque(int capacidad) {
         this.capacidad = capacidad;
     }
+
+    public int getCapacidad() {
+        return capacidad;
+    }
 }
