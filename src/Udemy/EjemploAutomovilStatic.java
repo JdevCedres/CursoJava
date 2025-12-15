@@ -1,3 +1,5 @@
+package Udemy;
+
 public class EjemploAutomovilStatic {
     public static void main(String[] args) {
         Motor motorSubaru = new Motor(2.0,TipoMotor.GASOLINA);

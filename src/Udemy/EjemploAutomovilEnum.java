@@ -1,3 +1,5 @@
+package Udemy;
+
 public class EjemploAutomovilEnum {
     public static void main(String[] args) {
         Motor motorSubaru = new Motor(2.0,TipoMotor.GASOLINA);

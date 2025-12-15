@@ -1,4 +1,4 @@
-/*
+package Udemy;/*
 Principio de visibilidad o ocultamiento de los atributos.
 Los atributos de la clase tienen que ser privados o protegidos siempre, solo se pueden
 leer o modificar mediante métodos, los famosos getter and setter
@@ -19,6 +19,7 @@ public class Automovil {
     private Tanque tanque;
     private Persona conductor;
     private Rueda[] ruedas;
+    private int indicesRuedas;
 
     private TipoAutomovil tipo;
 
@@ -34,6 +35,7 @@ public class Automovil {
     // Constructores
     public Automovil() {
         this.id = ++ultimoId;  // para la incrementación
+        this.ruedas = new Rueda[5];
     }
 
     public Automovil(String fabricante, String modelo) {
@@ -158,32 +160,62 @@ public class Automovil {
 
     // Metodos
 
+    public Automovil addRuedas(Rueda rueda){
+        if (indicesRuedas < this.ruedas.length){
+            this.ruedas[indicesRuedas++] = rueda;
+        }
+        return this;
+
+    }
+
     public String verDetalle() {
-        String detalle = "auto.id = " + this.id +
-                "\nauto.fabricante = " + this.fabricante +
-                "\nauto.modelo = " + this.modelo;
+        StringBuilder detalle = new StringBuilder();
 
-        if (this.getTipo() != null) {
-            detalle += "\nauto.tipo = " + this.getTipo().getDescripcion();
+        // Información básica del auto
+        detalle.append("ID: ").append(this.id)
+                .append("\nFabricante: ").append(this.fabricante)
+                .append("\nModelo: ").append(this.modelo)
+                .append("\nUdemy.Color: ").append(this.color)
+                .append("\nUdemy.Color patente: ").append(Automovil.colorPatente);
+
+        // Tipo de automóvil
+        if (this.tipo != null) {
+            detalle.append("\nTipo: ").append(this.tipo.getDescripcion());
         }
-        detalle += "\nauto.color = " + this.color +
-                "\nauto.colorPatente = " + colorPatente;
+
+        // Información del motor
         if (this.motor != null) {
-            detalle += this.motor.getCilindrada();
-        }
-        if (conductor != null){
-            detalle += "\nauto.Conductor subaru: " + this.getConductor();
+            detalle.append("\nUdemy.Motor: ").append(this.motor.getCilindrada())
+                    .append("L - ").append(this.motor.getTipo());
         }
 
+        // Información del conductor
+        if (this.conductor != null) {
+            detalle.append("\nConductor: ").append(this.conductor.getNombre())
+                    .append(" ").append(this.conductor.getApellido());
+        }
 
-        if(getRuedas() != null){
-            detalle += "\nRuedas del automóvil: ";
-            for(Rueda r : this.getRuedas()){
-                detalle += "\n" + r.getFabricante() + ", " + r.getAro() + ", " + r.getAncho() ;
+        // Información del tanque
+        if (this.tanque != null) {
+            detalle.append("\nUdemy.Tanque: ").append(this.tanque.getCapacidad()).append(" litros");
+        }
+
+        // 🎯 SECCIÓN CORREGIDA - RUEDAS
+        // Usamos indicesRuedas para saber cuántas ruedas realmente se agregaron
+        if (this.ruedas != null && this.indicesRuedas > 0) {
+            detalle.append("\nRuedas (").append(this.indicesRuedas).append("):");
+            for (int i = 0; i < this.indicesRuedas; i++) {
+                Rueda r = this.ruedas[i];
+                detalle.append("\n  ").append(i + 1).append(". ")
+                        .append(r.getFabricante())
+                        .append(" - Aro: ").append(r.getAro())
+                        .append(", Ancho: ").append(r.getAncho());
             }
+        } else {
+            detalle.append("\nRuedas: No asignadas");
         }
 
-        return detalle;
+        return detalle.toString();
     }
 
     public String acelerar(int rpm) {
@@ -237,7 +269,7 @@ public class Automovil {
 
     @Override
     public String toString() {
-        return "Automovil{" +
+        return "Udemy.Automovil{" +
                 "id= '" + id + '\'' +
                 "fabricante='" + fabricante + '\'' +
                 ", modelo='" + modelo + '\'' +

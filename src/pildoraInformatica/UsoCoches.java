@@ -1,10 +1,9 @@
-package PildoraInformatica;
+package pildoraInformatica;
 
 public class UsoCoches {
     public static void main(String[] args) {
         Coche renault = new Coche();
-        renault.setAncho(1.52);
-        renault.setPeso(1400.00);
+
         System.out.println("El coche Renault tiene: " + renault.getRuedas() + " ruedas");
         System.out.println("El coche Renault tiene el color: " + renault.getColor());
         System.out.println("El coche Renault tiene de ancho: " + renault.getAncho()+"m");
@@ -14,6 +13,14 @@ public class UsoCoches {
         renault.arrancar();
         renault.frenar();
         renault.girar();
+
+        // Ejemplo con extras
+
+        Coche coche1 = new Coche();
+        coche1.setAsientosCuero("Si");
+        System.out.println();
+        System.out.println("El peso es: " + coche1.getPeso() + "Kg");
+        System.out.println("El precio es: " + coche1.getPrecio() + "€");
 
         System.out.println();
 

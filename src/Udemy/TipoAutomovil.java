@@ -1,3 +1,5 @@
+package Udemy;
+
 public enum TipoAutomovil {
     SEDAN("Sedan", "Auto mediano", 4),
     STATION_WAGON("Station wagon", "Auto Grande", 5),
