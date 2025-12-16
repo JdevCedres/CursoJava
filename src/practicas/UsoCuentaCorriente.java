@@ -14,7 +14,12 @@ public class UsoCuentaCorriente {
         cuentaCorriente1.setReintegro(50000);
         cuentaCorriente1.setIngreso(0);
         CuentaCorriente cuentaCorriente2 = new CuentaCorriente("Elena",100);
-        
+        System.out.println(cuentaCorriente2.getNombreTitular());
+        System.out.println(cuentaCorriente2.getNumeroCuenta());
+        System.out.println(cuentaCorriente2.getSaldo());
+        CuentaCorriente.Trasferencia(cuentaCorriente1,cuentaCorriente2,3500);
+        System.out.println(cuentaCorriente2.getSaldo());
+
     }
 
 }

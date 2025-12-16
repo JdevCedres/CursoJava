@@ -5,8 +5,8 @@ import java.util.Random;
 public class CuentaCorriente {
     //Propiedades
     private double saldo ;
-    private String nombreTitular;
-    private long numeroCuenta;
+    private final String nombreTitular;
+    private final long numeroCuenta;
     private double saldoBase;
 
     //Constructor
