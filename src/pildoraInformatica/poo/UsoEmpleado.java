@@ -4,8 +4,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class UsoEmpleado {
-    static void main(String[] args) {
-
+    public static void main(String[] args) {
         Empleado empleado1 = new Empleado("Manuel",2000,2018,1,3);
         Empleado empleado2 = new Empleado("Elena",2500,2019,6,30 );
         Empleado empleado3 = new Empleado("Adrián",500,2000,8,30 );
@@ -13,7 +12,7 @@ public class UsoEmpleado {
         System.out.println(empleado1.getDatosEmpleado());
         System.out.println(empleado2.getDatosEmpleado());
         System.out.println(empleado3.getDatosEmpleado());
-
+        System.out.println(Empleado.dameIdSiguiente());
     }
 }
 
@@ -59,6 +58,10 @@ class Empleado {
         sueldo += aumento;
     }
 
+    public static String dameIdSiguiente(){
+        return "El id siguiente es: " + idSiguiente;
+    }
 
+// Video 38 metodo static
 }
 
