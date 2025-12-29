@@ -2,6 +2,8 @@ package mouredev.poo;
 
 public class Inheritance {
     static void main(String[] args) {
+
+        //Herencia (Es un .. -> en este caso un dog "es un" animal.)
         var animal = new Animal("mi animal");
         animal.eat();
 
