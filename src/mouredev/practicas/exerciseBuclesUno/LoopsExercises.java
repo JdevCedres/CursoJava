@@ -1,9 +1,6 @@
 package mouredev.practicas.exerciseBuclesUno;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 
 public class LoopsExercises {
     public static void main(String[] args) {
@@ -94,6 +91,8 @@ public class LoopsExercises {
             System.out.println(m);
         }
 
+        // 9 Usa break para detener un bucle cunado encuentres un número negativo en Array
+
         int[] negativos = {1, 2, -3, 4, 5};
 
         for (int negativo : negativos){
@@ -104,6 +103,22 @@ public class LoopsExercises {
                 System.out.println(negativo);
             }
         }
+
+        // 10 Crea un programa que calcule el factorial de un número dado
+        System.out.println("Factorial");
+        Scanner sc = new Scanner(System.in);
+       // System.out.print("Introduce un número: ");
+       // int numero = sc.nextInt();
+        int numero = 5;
+        int total=1;
+
+        for (int fac = numero ; fac >= 1 ; fac--){
+            total = total * fac;
+            System.out.println(fac);
+        }
+        System.out.println(total);
+
+
 
     }
 
