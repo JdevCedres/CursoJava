@@ -106,6 +106,7 @@ public class LoopsExercises {
 
         // 10 Crea un programa que calcule el factorial de un número dado
         System.out.println("Factorial");
+
         Scanner sc = new Scanner(System.in);
        // System.out.print("Introduce un número: ");
        // int numero = sc.nextInt();
