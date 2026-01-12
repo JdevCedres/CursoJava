@@ -12,9 +12,9 @@ public class ThrowExample {
 
     public void checkScore(int score) throws CustomException {
         if (score < 0 || score > 100){
-            throw new CustomException("Mi excepción personalizada");
+            throw new CustomException("Error revisando puntuación: la puntación tiene que ser entre 0 y 100");
         }else {
-            System.out.println("Puntación Válida " + score);
+            System.out.println("Puntación Válida: " + score);
         }
     }
 

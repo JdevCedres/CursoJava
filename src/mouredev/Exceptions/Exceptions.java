@@ -1,7 +1,9 @@
 package mouredev.Exceptions;
 
+import java.beans.Customizer;
+
 public class Exceptions {
-    static void main(String[] args) throws CustomException {
+   public static void main(String[] args){
 
         // Manejo de excepciones:
 
@@ -49,8 +51,12 @@ public class Exceptions {
         }
 
         // Excepción personalizada
+        try{
+            throwExample.checkScore(130);
+        }catch (CustomException e){
+            System.out.println("Error personalizado: " + e.getMessage());
+        }
 
-        throwExample.checkScore(123);
 
 
         System.out.println("Fin");
