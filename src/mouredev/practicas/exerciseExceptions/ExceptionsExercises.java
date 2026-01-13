@@ -30,6 +30,9 @@ public class ExceptionsExercises {
         }
         System.out.println("fin");
 
+        // 4. Escribe una función que transforma texto a número. usa try catch para manejar entradas no válidas
+
+
 
 
 

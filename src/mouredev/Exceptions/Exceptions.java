@@ -57,8 +57,6 @@ public class Exceptions {
             System.out.println("Error personalizado: " + e.getMessage());
         }
 
-
-
         System.out.println("Fin");
     }
 }
