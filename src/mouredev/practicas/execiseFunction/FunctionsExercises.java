@@ -26,7 +26,8 @@ public class FunctionsExercises {
         numbers.add(5);
         System.out.println(sizeList(numbers));
         // 8 Crea un metodo que reciba un array de enteros, calcula su media y lo retorna
-
+        int[] numberMedia = {1, 2, 3, 4, 5};
+        System.out.println(media(numberMedia));
 
     }
 
@@ -72,16 +73,14 @@ public class FunctionsExercises {
     }
 
     // ejercicio 8
+
     public static double media(int[] enteros) {
         double totalTotal = 0;
+        double suma = 0;
         for (int entero : enteros) {
-            int result = entero;
-            int total = result + entero;
-             totalTotal = (double) total / enteros.length;
-
+            suma += entero;   // acumulamos
         }
-        return totalTotal;
-
+        return suma / enteros.length;
     }
 }
 
