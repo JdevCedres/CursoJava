@@ -5,7 +5,7 @@ public class ExceptionsExercises {
         // 1. Divide dos números almacenados en dos variables. Maneja la división entre cero try catch
         var numOne = 10;
         var numTwo = 0;
-        try{
+        try {
             var result = numOne / numTwo;
             System.out.println("El resultado de la división es: " + result);
         } catch (ArithmeticException e) {
@@ -15,25 +15,42 @@ public class ExceptionsExercises {
         // 2. Crea una array de 3 elementos e intenta acceder al indice 5. Captura el error
 
         int[] MyArray = {1, 2, 3};
-        try{
+        try {
             System.out.println(MyArray[5]);
-        } catch (ArrayIndexOutOfBoundsException e){
+        } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Error: " + e.getMessage());
         }
 
         // 3. Crea una variable String nula e intenta imprimir su longitud. Maneja el NullPointerException
-        try{
+        try {
             String surname = null;
             System.out.println(surname.length());
-        } catch (NullPointerException e){
+        } catch (NullPointerException e) {
             System.out.println("Error!: " + e.getMessage());
         }
         System.out.println("fin");
 
-        // 4. Escribe una función que transforma texto a número. usa try catch para manejar entradas no válidas
+        // 4. Escribe una función que transforma de texto a número. usa try catch para manejar entradas no válidas
+        // 5. más finally
+        transformation("123");
+        // 6. Usa el thow para lanzar un IlegalArgumentException si un introducido es negativo
+        int numberPositive = -10;
+        if (numberPositive < 0){
+            throw new IllegalArgumentException("El número " + numberPositive + " tiene que ser positivo");
+        }else {
+            System.out.println("El número " + numberPositive + " es positivo.");
+        }
+    }
 
-
-
+    public static void transformation(String converter) {
+        try{
+            int converterNunber= Integer.parseInt(converter);
+            System.out.println(converterNunber);
+        } catch (NumberFormatException e) {
+            System.out.println("El valor no es un número válido");
+        }finally {
+            System.out.println(converter);
+        }
 
 
     }
