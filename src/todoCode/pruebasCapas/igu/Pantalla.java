@@ -8,31 +8,62 @@ public class Pantalla extends JFrame {
     public Pantalla() {
         setTitle("Mi primera ventana");
         setSize(400, 300);
-        setLocationRelativeTo(null); // centrar
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Panel principal con BorderLayout
         JPanel panelPrincipal = new JPanel(new BorderLayout());
 
-        // Label grande centrado arriba
         JLabel lblTitulo = new JLabel("Copiadora", JLabel.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 24));
         panelPrincipal.add(lblTitulo, BorderLayout.NORTH);
 
-        // Panel secundario para la fila de la izquierda
+        JPanel panelCentro = new JPanel();
+        panelCentro.setLayout(new BoxLayout(panelCentro, BoxLayout.Y_AXIS));
+
         JPanel panelIzquierda = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        JLabel lblInserte = new JLabel("Inserte texto:");
-        lblInserte.setFont(new Font("Arial", Font.PLAIN, 14));
-        panelIzquierda.add(lblInserte);
+        panelIzquierda.add(new JLabel("Inserte texto:"));
+        JTextField jText = new JTextField(25);
+        panelIzquierda.add(jText);
 
-        panelPrincipal.add(panelIzquierda, BorderLayout.CENTER);
+        JPanel panelIzquierdaDos = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JButton jButtonCopiar = new JButton("Copiar");
+        panelIzquierdaDos.add(jButtonCopiar);
 
+
+
+        JPanel panelResultado = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        panelResultado.add(new JLabel("El texto que ingresó es:"));
+        JTextField jTextIntroducido = new JTextField(25);
+        panelResultado.add(jTextIntroducido);
+
+        // Botón limpiar
+        JPanel panelFinal = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JButton jButtonLimpiar = new JButton("Limpiar");
+        panelFinal.add(jButtonLimpiar);
+
+
+        // evento del botón copiar
+        jButtonCopiar.addActionListener(e -> {
+            String texto = jText.getText();
+            jTextIntroducido.setText(texto);
+        });
+
+        // evento botón limpiar
+        jButtonLimpiar.addActionListener(e -> {
+            jText.setText("");
+            jTextIntroducido.setText("");
+        });
+
+        panelCentro.add(panelIzquierda);
+        panelCentro.add(panelIzquierdaDos);
+        panelCentro.add(panelResultado);
+        panelCentro.add(panelFinal);
+
+        panelPrincipal.add(panelCentro, BorderLayout.CENTER);
         add(panelPrincipal);
-
     }
 
-    public static void main(String[] args) {
-        new Pantalla().setVisible(true);
-    }
+
+
 }
 
